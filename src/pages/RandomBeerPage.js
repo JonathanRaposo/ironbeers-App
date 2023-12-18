@@ -4,13 +4,13 @@ import Header from '../components/Header';
 
 
 
-const API_URL = 'https://ih-beers-api2.herokuapp.com/beers/random';
+const API_URL = 'https://ih-beers-api2.herokuapp.com/beers';
 
 const RamdonBeerPage = () => {
     const [beer, setBeer] = useState({});
 
     useEffect(() => {
-        fetch(API_URL)
+        fetch(`${API_URL}/random`)
             .then((response) => response.json())
             .then((data) => { setBeer(data) })
     }, [])
